@@ -252,10 +252,10 @@ const About = () => (
         </p>
         
         <div className="flex gap-4 pt-6">
-          <a href="#" className="flex items-center gap-2 border border-charcoal/20 px-6 py-3 text-xs font-condensed font-bold uppercase tracking-widest hover:border-saffron hover:text-saffron transition-all text-charcoal">
+          <a href="https://www.facebook.com/AmitJaniIND" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-charcoal/20 px-6 py-3 text-xs font-condensed font-bold uppercase tracking-widest hover:border-saffron hover:text-saffron transition-all text-charcoal">
             <Facebook size={16} /> Facebook
           </a>
-          <a href="#" className="flex items-center gap-2 border border-charcoal/20 px-6 py-3 text-xs font-condensed font-bold uppercase tracking-widest hover:border-saffron hover:text-saffron transition-all text-charcoal">
+          <a href="https://www.instagram.com/amitjaani_ind/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-charcoal/20 px-6 py-3 text-xs font-condensed font-bold uppercase tracking-widest hover:border-saffron hover:text-saffron transition-all text-charcoal">
             <Instagram size={16} /> Instagram
           </a>
         </div>
@@ -571,11 +571,11 @@ const Contact = () => {
           
           <div className="flex flex-wrap gap-4">
             {[
-              { icon: <Facebook size={18} />, label: "Facebook" },
-              { icon: <Instagram size={18} />, label: "Instagram" },
-              { icon: <Twitter size={18} />, label: "Twitter/X" }
+              { icon: <Facebook size={18} />, label: "Facebook", href: "https://www.facebook.com/AmitJaniIND" },
+              { icon: <Instagram size={18} />, label: "Instagram", href: "https://www.instagram.com/amitjaani_ind/" },
+              { icon: <Twitter size={18} />, label: "Twitter/X", href: "https://x.com/AmitJaniIND" }
             ].map((social, i) => (
-              <a key={i} href="#" className="flex items-center gap-3 border border-saffron/20 px-6 py-3 text-xs font-condensed font-bold uppercase tracking-widest text-charcoal hover:border-saffron hover:text-saffron transition-all">
+              <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 border border-saffron/20 px-6 py-3 text-xs font-condensed font-bold uppercase tracking-widest text-charcoal hover:border-saffron hover:text-saffron transition-all">
                 {social.icon} {social.label}
               </a>
             ))}
@@ -747,8 +747,14 @@ const Footer = () => (
           उत्तर प्रदेश नवनिर्माण सेना<br />राष्ट्रीय अध्यक्ष — अमित जानी<br />नई सोच। नया उत्तर प्रदेश।
         </p>
         <div className="flex gap-4">
-          {[Facebook, Instagram, Twitter, Youtube, Linkedin].map((Icon, i) => (
-            <a key={i} href="#" className="w-10 h-10 border border-saffron/20 flex items-center justify-center text-charcoal/50 hover:border-saffron hover:text-saffron transition-all">
+          {[
+            { Icon: Facebook, href: "https://www.facebook.com/AmitJaniIND" },
+            { Icon: Instagram, href: "https://www.instagram.com/amitjaani_ind/" },
+            { Icon: Twitter, href: "https://x.com/AmitJaniIND" },
+            { Icon: Youtube, href: "#" },
+            { Icon: Linkedin, href: "#" }
+          ].map(({ Icon, href }, i) => (
+            <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-saffron/20 flex items-center justify-center text-charcoal/50 hover:border-saffron hover:text-saffron transition-all">
               <Icon size={18} />
             </a>
           ))}
