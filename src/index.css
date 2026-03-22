@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-hindi: "Tiro Devanagari Hindi", serif;
+  --font-condensed: "Barlow Condensed", sans-serif;
+
+  --color-saffron: #FF6B00;
+  --color-saffron-light: #FF8C33;
+  --color-deep-green: #0A3D2B;
+  --color-gold: #D4A017;
+  --color-cream: #FDF6E3;
+  --color-dark: #0D0D0D;
+  --color-charcoal: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-charcoal font-sans overflow-x-hidden;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.clip-path-btn {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+}
+
+.clip-path-portrait-bg {
+  clip-path: polygon(10% 0%, 100% 0%, 100% 85%, 90% 100%, 0% 100%, 0% 15%);
+}
+
+.clip-path-portrait {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+}
